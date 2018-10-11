@@ -1,0 +1,16 @@
+<section *ngIf="book">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 offset-1">
+          <div class="card shadow-lg p-3 mt-3 mb-3">
+              <p><span>ID: </span><span>{{book?.id}}</span></p>
+              <p><span>Title: </span><span>{{book?.title}}</span></p>
+              <p><span>Author: </span><span>{{book?.author}}</span></p>
+              <p><span>Year: </span><span>{{book?.year}}</span></p>
+              <p><span>Pages: </span><span>{{book?.pages}}</span></p>
+              <p><span>Publisher: </span><span>{{book?.publisher}}</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

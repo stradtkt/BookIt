@@ -1,0 +1,34 @@
+
+<app-book-new (createBook)="onCreate($event)"></app-book-new>
+<section>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 offset-1">
+            <table class="table table-hover text-center">
+                <thead class="bg-primary text-white">
+                  <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Year</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let book of books" (click)="onSelect(book)">
+                    <td>{{book.id}}</td>
+                    <td>{{book.title}}</td>
+                    <td>{{book.author}}</td>
+                    <td>{{book.year}}</td>
+                    <td>
+                      <span class="ml-1 mr-2"><a href="" class="btn btn-warning rounded text-white">Edit</a></span>
+                      <span class="ml-2"><a href="" class="btn btn-danger rounded">Delete</a></span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+      </div>
+    </div>
+  </section>
+<app-book-detail [book]="selectedBook"></app-book-detail>
