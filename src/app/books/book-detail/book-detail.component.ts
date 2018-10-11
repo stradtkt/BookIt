@@ -8,7 +8,7 @@ import {BOOKS} from './../../data/data';
 })
 export class BookDetailComponent implements OnInit {
   @Input()
-  book = Book;
+  book: Book;
   constructor() { }
 
   ngOnInit() {
