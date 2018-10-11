@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Book } from './models/book';
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'book-it';
+  book = new Book();
+  books: Book[] = [];
+
+  onSubmit(event: Event, form: NgForm) {
+    event.preventDefault();
+    this.books.push(this.book);
+    this.book = new Book();
+    form.reset();
+  }
 }
