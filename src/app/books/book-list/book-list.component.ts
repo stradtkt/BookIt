@@ -23,7 +23,20 @@ export class BookListComponent implements OnInit {
     this.selectedBook = this.selectedBook === book ? null : book;
   }
   onCreate(book: Book) {
-    this.books.push(book);
+    this.bookService.createBook(book)
+      .subscribe(createdBook => {
+        // this.books.push(createdBook);
+        this.books = [...this.books, createdBook];
+      });
+  }
+  onRemove(book: Book) {
+    this.bookService.removeBook(book.id)
+      .subscribe(removeBook => {
+          this.books = this.books.filter(b => b.id !== removeBook.id);
+      });
+  }
+  onEvent(event: Event) {
+    event.stopPropagation();
   }
 
 }

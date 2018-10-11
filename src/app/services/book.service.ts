@@ -13,4 +13,10 @@ export class BookService {
   getBooks(): Observable<Book[]> {
     return this.http.get<Book[]>(this.base);
   }
+  createBook(book: Book): Observable<Book> {
+    return this.http.post<Book>(this.base, book);
+  }
+  removeBook(id: number): Observable<Book> {
+    return this.http.delete<Book>(`${this.base}/${id}`);
+  }
 }

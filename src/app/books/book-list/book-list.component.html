@@ -4,6 +4,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-10 offset-1">
+          <div class="card shadow-lg mb-3">
             <table class="table table-hover text-center">
                 <thead class="bg-primary text-white">
                   <tr>
@@ -20,13 +21,14 @@
                     <td>{{book.title}}</td>
                     <td>{{book.author}}</td>
                     <td>{{book.year}}</td>
-                    <td>
+                    <td (click)="onEvent($event)">
                       <span class="ml-1 mr-2"><a href="" class="btn btn-warning rounded text-white">Edit</a></span>
-                      <span class="ml-2"><a href="" class="btn btn-danger rounded">Delete</a></span>
+                      <span class="ml-2"><a href="" (click)="onRemove(book)" class="btn btn-danger rounded">Delete</a></span>
                     </td>
                   </tr>
                 </tbody>
               </table>
+            </div>
         </div>
       </div>
     </div>
