@@ -5,10 +5,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import * as fromBooks from './books';
 import * as fromServices from './services';
+import { SearchPipe } from './search.pipe';
 
 
 @NgModule({
-  declarations: [AppComponent, ...fromBooks.components],
+  declarations: [AppComponent, ...fromBooks.components, SearchPipe],
   imports: [
     BrowserModule,
     FormsModule,

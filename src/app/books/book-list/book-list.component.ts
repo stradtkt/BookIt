@@ -11,6 +11,7 @@ export class BookListComponent implements OnInit {
   book = new Book();
   books: Book[] = [];
   selectedBook: Book;
+  filter: Book = new Book();
   constructor(private bookService: BookService) { }
 
   ngOnInit() {
@@ -37,6 +38,10 @@ export class BookListComponent implements OnInit {
   }
   onEvent(event: Event) {
     event.stopPropagation();
+  }
+
+  clearFilter(): void {
+    this.filter = new Book(false);
   }
 
 }
