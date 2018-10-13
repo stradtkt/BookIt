@@ -6,14 +6,18 @@ import { AppComponent } from './app.component';
 import * as fromBooks from './books';
 import * as fromServices from './services';
 import { SearchPipe } from './search.pipe';
-
+import { AppRoutingModule } from './app-routing.module';
+import { NavbarComponent } from './navbar/navbar.component';
+import { BookResolve } from './resolvers';
 
 @NgModule({
-  declarations: [AppComponent, ...fromBooks.components, SearchPipe],
+  declarations: [AppComponent, ...fromBooks.components, SearchPipe, NavbarComponent],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule,
+    BookResolve
   ],
   providers: [...fromServices.services],
   bootstrap: [AppComponent]
